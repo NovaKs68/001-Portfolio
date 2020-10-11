@@ -10,9 +10,13 @@ export class HeaderMenuComponent implements OnInit {
   forename = 'Tom';
 
   imgPath : string;
+  imgRobotHeaderPath : string;
+  imgNASHeaderPath : string;
 
   constructor() {
     this.imgPath = 'assets/img/pp.jpg';
+    this.imgRobotHeaderPath = 'assets/img/RobotPortfolio.PNG'
+    this.imgNASHeaderPath = 'assets/img/ServeurNASHauteDef.png'
   }
 
   ngOnInit(): void {

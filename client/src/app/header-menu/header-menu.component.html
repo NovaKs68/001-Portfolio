@@ -1,6 +1,25 @@
-<header id="header_menu row">
+<header id="header_menu">
+  <div class="row">
+    <div id="headerBlocOne" class="col-7 mt-md-2">
+      <nav id="headerMenu" class="row justify-content-around">
+        <a href="" class="headerMenuContent">MENU</a>
+        <a href="" class="headerMenuContent">BIOGRAPHIE</a>
+        <a href="" class="headerMenuContent">PROJETS</a>
+        <a href="" class="headerMenuContent">ME CONTACTER</a>
+      </nav>
+      <img [src]="imgNASHeaderPath" alt="Image du projet serveur NAS." id="imgNASHeader">
+    </div>
 
-  <div id="identity" class="row offset-md-1 col-md-3 mt-md-2">
+    <div id="headerBlocTwo" class="col-5 mt-md-4">
+      <img [src]="imgRobotHeaderPath" alt="Image du projet robot hexapode." id="imgRobotHeader">
+    </div>
+
+    <div id="profil">
+      <h1 class="headerProfilContent">WILLEMIN</h1>
+      <h1 class="headerProfilContent">TOM</h1>
+    </div>
+  </div>
+  <!--<div id="identity" class="row offset-md-1 col-md-3 mt-md-2">
     <div class="col-md-8">
       <h1>{{ name }}</h1>
       <h1>{{ forename }}</h1>
@@ -16,7 +35,9 @@
       <li><a href="">Par mail</a></li>
       <li><a href="">Mon instagram</a></li>
     </ul>
-  </div>
+  </div>-->
+
+
 
 </header>
 
