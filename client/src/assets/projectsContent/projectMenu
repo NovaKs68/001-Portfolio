@@ -1,0 +1,13 @@
+{ "projects": {
+  "robotHexapod": {
+    "title": "Robot hexapode",
+    "image": "RobotPortfolio.PNG",
+    "alt": "Image d'un robot hexapode."
+  },
+  "serveurNAS": {
+    "title": "Serveur NAS",
+    "image": "RobotPortfolio.PNG",
+    "alt": "Image d'une modélisation d'un serveur NAS"
+  }
+}
+}

@@ -1,10 +1,22 @@
-<section class="row justify-content-around">
-  <p class="col-5 mt-md-5 mb-md-5">Je m'appelle Tom Willemin. Bienvenue sur mon portfolio.
-    <br>Je suis en deuxième année de licence professionnelle développeur informatique.
-    <br/>Les nouvelles technologies me passionnent. Que ce soit de la robotique, du serveur ou bien du web.
-    <br>Tous les jours je me fixe de nouveaux objectifs et de nouveaux challenges à franchir afin d’être en constante évolution.
-    <br>C'est pourquoi je vous présentes les projets que j'ai effectué (et que j'effectue) à côté de mes études.
-    Le développement personnel est une facette importante de ma vie.</p>
-  <img class="col-5 mt-md-3 mb-md-3" src="" alt="Images aléatoires des projets réalisés">
+<section class="row">
+
+  <div id="slideshow" class="offset-1 mt-md-3 ">
+    <ul id="slideContent">
+      <li><img [src]="imgSlideRobotHexapod" alt="Image du projet robot hexapode." class="imgSlide"></li>
+      <li><img [src]="imgSlideServerNAS" alt="Image du projet de serveur NAS." class="imgSlide"></li>
+    </ul>
+  </div>
+
+  <div class="col-4 mt-md-5 presentMe">
+    <div class="presentMe">
+      <p class="text">Je m'appelle Tom Willemin. Bienvenue sur mon portfolio.
+        <br>Je suis en deuxième année de licence professionnelle développeur informatique.
+        <br/>Les nouvelles technologies me passionnent. Que ce soit de la robotique, du serveur ou bien du web.
+        <br>Tous les jours je me fixe de nouveaux objectifs et de nouveaux challenges à franchir afin d’être en constante évolution.
+        <br>C'est pourquoi je vous présentes les projets que j'ai effectué (et que j'effectue) à côté de mes études.
+        Le développement personnel est une facette importante de ma vie.</p>
+    </div>
+  </div>
+
 </section>
 

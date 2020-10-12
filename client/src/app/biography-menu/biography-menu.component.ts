@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./biography-menu.component.scss']
 })
 export class BiographyMenuComponent implements OnInit {
-
-  constructor() { }
+  imgSlideRobotHexapod: string;
+  imgSlideServerNAS: string;
+  constructor() {
+    this.imgSlideRobotHexapod = 'assets/img/RobotHexapodSlide.PNG'
+    this.imgSlideServerNAS = 'assets/img/ServerNASSlide.JPG'
+  }
 
   ngOnInit(): void {
   }
