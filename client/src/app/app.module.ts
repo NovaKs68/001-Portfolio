@@ -10,6 +10,7 @@ import { MenuViewComponent } from './menu-view/menu-view.component';
 import {RouterModule, Routes} from '@angular/router'
 
 const appRoutes: Routes = [
+  { path : '', component: MenuViewComponent },
   { path: 'menu', component: MenuViewComponent }
 ]
 
