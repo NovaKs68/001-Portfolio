@@ -1,0 +1,50 @@
+version: '3.1'
+
+services:
+  portfolio-web:
+    container_name: portfolio-web
+    build:
+      context: client
+    ports:
+      - ${PORT_ANGULAR}:80
+    depends_on:
+      - portfolio-node
+    env_file:
+      - ./.env
+
+
+  portfolio-node:
+    container_name: portfolio-node
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${PORT_BACK}:8080
+    depends_on:
+      - mariadb
+    volumes:
+      - ./server/log:/app/server/log:z
+      - ./server/justificatifs:/app/server/justificatifs:z
+      - ./server/picturesTrombinoscope:/app/server/picturesTrombinoscope:z
+    env_file:
+      - ./.env
+
+  mariadb:
+    container_name: portfolio-bdd
+    build:
+      context: BDD
+      dockerfile: Dockerfile
+    volumes:
+      - ./BDD/data:/var/lib/mysql:z
+    env_file:
+      - ./.env
+    expose:
+      - 3306
+
+  adminer:
+    container_name: portfolio-adminer
+    image: adminer
+    depends_on:
+      - mariadb
+    ports:
+      - ${PORT_ADMINER}:8080

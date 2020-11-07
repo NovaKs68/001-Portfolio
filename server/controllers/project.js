@@ -1,14 +1,29 @@
+const db = require('../config/db.config.js');
+const Project = db.project;
 
-const projects ={ 'id': 1, 'image': 'url://blabla', 'resume': 'C est un joli Robot hum.. hum..' };
-
-exports.creatProject = (req, res, next) => {
-    res.status(200).json()
+exports.create = (req, res, next) => {
+    Project.create({
+        name: req.body.name,
+        age: req.body.age
+    })
+        .then(project => {
+            res.status(201).json(project);
+        })
+        .catch(error => res.status(400).send(error));
 };
 
-exports.getAllProjects = (req, res, next) => {
-    res.status(200).json(projects);
+exports.getAll = (req, res, next) => {
+    Project.findAll()
+        .then(project => {
+            res.status(200).json(project);
+        })
+        .catch(error => res.status(400).send(error));
 };
 
-exports.getOneProject = (req, res, next) => {
-    res.status(200).json(projects[req.params.id]);
+exports.getOne = (req, res, next) => {
+    Project.findAll()
+        .then(project => {
+            res.status(200).json(project);
+        })
+        .catch(error => res.status(400).send(error));
 };
