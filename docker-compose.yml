@@ -16,7 +16,7 @@ services:
   portfolio-node:
     container_name: portfolio-node
     build:
-      context: .
+      context: server
       dockerfile: Dockerfile
     ports:
       - ${PORT_BACK}:8080

@@ -14,7 +14,6 @@ RUN npm ci --only=production
 #copy project files
 COPY . .
 RUN rm -rf ./server/helpers/logger.js
-RUN mv ./server/helpers/logger-prod.js ./server/helpers/logger.js
 
 EXPOSE 8080
 
