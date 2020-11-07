@@ -1,0 +1,55 @@
+version: '3.1'
+
+services:
+  portfolio-web-dev:
+    container_name: portfolio-web-dev
+    build:
+      context: ./client
+      dockerfile: Dockerfile-dev
+    command: npm run start-docker
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    ports:
+      - 4200:4200
+    depends_on:
+      - portfolio-node-dev
+    env_file:
+      - ./.env
+
+
+  portfolio-node-dev:
+    container_name: portfolio-node-dev
+    build:
+      context: ./server
+      dockerfile: Dockerfile-dev
+    command: ["nodemon", "index.js"]
+    ports:
+      - 8080:8080
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    depends_on:
+      - mariadb
+    env_file:
+      - ./.env
+
+  mariadb:
+    container_name: portfolio-bdd-dev
+    build:
+      context: BDD
+      dockerfile: Dockerfile-dev
+    volumes:
+      - ./BDD/data:/var/lib/mysql:z
+    env_file:
+      - ./.env
+    expose:
+      - 3306
+
+  adminer:
+    container_name: portfolio-adminer-dev
+    image: adminer
+    depends_on:
+      - mariadb
+    ports:
+      - ${PORT_ADMINER}:8080

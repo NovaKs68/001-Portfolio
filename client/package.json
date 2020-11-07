@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start-docker": "ng serve --proxy-config dev.proxy.conf.json --host 0.0.0.0"
   },
   "private": true,
   "dependencies": {
@@ -27,7 +28,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1002.0",
-    "@angular/cli": "~10.0.1",
+    "@angular/cli": "^10.2.0",
     "@angular/compiler-cli": "~10.0.2",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",

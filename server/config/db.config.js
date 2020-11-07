@@ -1,9 +1,9 @@
 const env = require('./env.js');
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize(env.database, env.username, env.password, {
-    host: env.host,
-    port: env.port,
+const sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQL_USER, process.env.MYSQL_ROOT_PASSWORD, {
+    host: process.env.MYSQL_HOST,
+    port: process.env.PORT_BACK,
     dialect: env.dialect,
     operatorsAliases: false,
 

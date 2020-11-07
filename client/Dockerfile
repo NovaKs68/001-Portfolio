@@ -14,22 +14,22 @@
 #
 #CMD ng serve --host 0.0.0.0
 
-FROM node:12.2.0
+FROM nginx:alpine
 
-RUN npm i -g @angular/cli
-  # Bundle APP files
+RUN apk --no-cache add npm git bash curl
 
 WORKDIR /app
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-#handle package installation
 COPY package*.json /app/
-ENV NPM_CONFIG_LOGLEVEL warn
-
 RUN npm install
 
-COPY . /app
+COPY ./ /app/
 
-EXPOSE 4200
+
+ARG configuration=production
+RUN npm run build -- --output-path=/app/dist/out --configuration $configuration
+
+RUN cp -R /app/dist/out/* /usr/share/nginx/html/
+
+COPY nginx-custom.conf /etc/nginx/conf.d/default.conf
+CMD ["nginx", "-g", "daemon off;"]

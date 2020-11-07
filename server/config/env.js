@@ -1,7 +1,7 @@
 const env = {
     database: 'portfolio',
-    username: 'root',
-    password: 'root',
+    username: 'tomSQL',
+    password: 'tom',
     host: 'localhost',
     port: 3306,
     dialect: 'mysql',
