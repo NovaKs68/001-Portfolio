@@ -1,29 +1,35 @@
-const db = require('../config/db.config.js');
-const Project = db.project;
+require('../config/db.config.js');
 
 exports.create = (req, res, next) => {
-    Project.create({
-        name: req.body.name,
-        age: req.body.age
-    })
-        .then(project => {
-            res.status(201).json(project);
-        })
-        .catch(error => res.status(400).send(error));
+    // check token
+    const content = [[req.body.title_project],[req.body.picture_project],[req.body.resume_project]]
+    db.query('INSERT INTO projects (id_project,title_project,picture_project,resume_project) VALUES (NULL,?,?,?)',content, (error, rows) => {
+        if(error){
+            res.status(400).json({sucess: false, error});
+        } else {
+            res.status(200).json({message: rows[0],sucess: true});
+        }
+    });
 };
 
 exports.getAll = (req, res, next) => {
-    Project.findAll()
-        .then(project => {
-            res.status(200).json(project);
-        })
-        .catch(error => res.status(400).send(error));
+    db.query('SELECT * FROM projects', function(err, rows,) {
+        if(err){
+            res.status(400).json({sucess: false, err});
+        } else {
+            res.status(200).json({message: rows, sucess: true});
+        }
+    });
 };
 
 exports.getOne = (req, res, next) => {
-    Project.findAll()
-        .then(project => {
-            res.status(200).json(project);
-        })
-        .catch(error => res.status(400).send(error));
+    db.query('SELECT * FROM projects WHERE id_project=?', req.params.id, function(err, rows,) {
+        if(err){
+            res.status(404).json({err, sucess: false});
+        } else if(rows[0] === undefined) {
+            res.status(404).json({message: 'Content is empty', sucess: false});
+        } else {
+            res.status(200).json({message: rows, sucess: true});
+        }
+    });
 };
