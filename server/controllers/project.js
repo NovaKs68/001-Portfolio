@@ -7,7 +7,7 @@ exports.create = (req, res, next) => {
         if(error){
             res.status(400).json({sucess: false, error});
         } else {
-            res.status(200).json({message: rows[0],sucess: true});
+            res.status(200).json({response: rows[0],sucess: true});
         }
     });
 };
@@ -17,7 +17,7 @@ exports.getAll = (req, res, next) => {
         if(err){
             res.status(400).json({sucess: false, err});
         } else {
-            res.status(200).json({message: rows, sucess: true});
+            res.status(200).json({response: rows, sucess: true});
         }
     });
 };
@@ -27,9 +27,9 @@ exports.getOne = (req, res, next) => {
         if(err){
             res.status(404).json({err, sucess: false});
         } else if(rows[0] === undefined) {
-            res.status(404).json({message: 'Content is empty', sucess: false});
+            res.status(404).json({response: 'Content is empty', sucess: false});
         } else {
-            res.status(200).json({message: rows, sucess: true});
+            res.status(200).json({response: rows, sucess: true});
         }
     });
 };
