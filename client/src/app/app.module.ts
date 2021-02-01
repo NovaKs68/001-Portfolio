@@ -8,12 +8,13 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { BiographyMenuComponent } from './biography-menu/biography-menu.component';
 import { ShowcaseProjectMenuComponent } from './showcase-project-menu/showcase-project-menu.component';
 import { MenuViewComponent } from './menu-view/menu-view.component';
-import {RouterModule, Routes} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router';
+import { DeviseMenuComponent } from './devise-menu/devise-menu.component'
 
 const appRoutes: Routes = [
   { path : '', component: MenuViewComponent },
   { path: 'menu', component: MenuViewComponent }
-]
+];
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
     HeaderMenuComponent,
     BiographyMenuComponent,
     ShowcaseProjectMenuComponent,
-    MenuViewComponent
+    MenuViewComponent,
+    DeviseMenuComponent
   ],
   imports: [
     BrowserModule,
