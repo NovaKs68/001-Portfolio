@@ -1,10 +1,20 @@
 article{
-  border-width: 1px;
-    border-style: solid;
-    border-color: black;
   height: 600px;
-  margin-bottom: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
-  width: 40%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  width: 49%;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  //background-image: url("http://localhost:8080/modules/pictures/MenuPortfolio.png1612465538048.png");
+  display: flex;
+}
+
+#containerContent {
+  margin: 500px 10px 10px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
 }

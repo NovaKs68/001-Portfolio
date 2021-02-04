@@ -19,7 +19,13 @@ export class ShowcaseProjectMenuComponent implements OnInit {
   async getProjects(): Promise<void> {
     this.projectsService.getProjects().then((res) => {
       this.projects = res.response;
+      console.log(this.projects);
     });
+  }
+
+  getBackgroundImageUrl(index: number): string {
+    console.log(this.projects[index].picture_project);
+    return this.projects[index].picture_project;
   }
 
 }

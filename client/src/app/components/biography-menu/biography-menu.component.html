@@ -1,4 +1,4 @@
-<section class="row" (scroll)="scrollHandler($event)">
+<section class="row" (scroll)="scrollHandler($event)" xmlns="http://www.w3.org/1999/html">
 
   <div id="slideshow" class="offset-1 mt-md-3 ">
     <ul id="slideContent">
@@ -7,7 +7,7 @@
     </ul>
   </div>
 
-  <div class="col-4 mt-md-5" >
+  <div id="containerShowPresentMe" class="col-4 mt-md-5" >
     <div *ngIf="showPresentMe" [ngClass]="'presentMe'" class="">
       <p class="text">Je m'appelle Tom Willemin. Bienvenue sur mon portfolio.
         <br>Je suis en deuxième année de licence professionnelle développeur informatique.
@@ -16,6 +16,8 @@
         <br>C'est pourquoi je vous présentes les projets que j'ai effectué (et que j'effectue) à côté de mes études.
         Le développement personnel est une facette importante de ma vie.</p>
     </div>
+  </div>
+  <div id="greyBox">
   </div>
 
 </section>
