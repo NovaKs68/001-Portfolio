@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Project} from '../models/project';
 
 @Injectable({
   providedIn: 'root'
@@ -46,12 +47,16 @@ export class ProjectsService {
     });
   }
 
-  postProject(titleProject: string, pictureProject: HTMLImageElement, resumeProject: string): any {
+  // FOrmer l'object project
+  postProject(project: Project, file: File): any {
     return new Promise((resolve, reject) => {
+      const projectData = new FormData();
+      projectData.append('project', JSON.stringify(project));
+      projectData.append('image', file);
+      console.log(project);
       fetch('http://localhost:8080/api/project/', {
         method: 'POST',
-        body: JSON.stringify({titleProject, pictureProject, resumeProject}),
-        headers: { 'Content-type': 'application/json; charset=UTF-8' }
+        body: projectData,
       })
         // Converting to JSON
         .then(response => {

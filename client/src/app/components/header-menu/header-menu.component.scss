@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'fulbo-argenta';
-  src: url('/../../assets/police/fulbo-argenta.otf');
+  src: url('./../../../assets/police/Fulbo-Argenta.otf');
 }
 
 div{
@@ -55,7 +55,7 @@ h1{
   color: floralwhite;
   text-decoration: none;
   font-size: 1.5em;
-  font-family: fulbo-argenta;
+  font-family: fulbo-argenta, serif;
 }
 
 #profil{
@@ -67,7 +67,7 @@ h1{
   height: 120px;
   width: 250px;
   color: white;
-  font-family: fulbo-argenta;
+  font-family: fulbo-argenta, serif;
   //border-width: 1px;
   //border-style: solid;
   //border-color: black;

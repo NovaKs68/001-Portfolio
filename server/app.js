@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const projectRoutes = require('./routes/project');
+const path = require('path')
 
 const app = express();
 
@@ -13,6 +14,9 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
+
+// Permet de donner l'accès aux images
+app.use('/modules/pictures', express.static(path.join(__dirname, 'modules/pictures')));
 
 // Routes de l'application
 app.use('/api/project', projectRoutes);

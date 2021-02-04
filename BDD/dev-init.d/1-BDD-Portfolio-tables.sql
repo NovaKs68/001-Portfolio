@@ -9,8 +9,8 @@ GRANT ALL PRIVILEGES ON portfolio . * TO 'tomSQL'@'%';
 CREATE TABLE projects (
         id_project SMALLINT NOT NULL AUTO_INCREMENT,
         title_project VARCHAR(255) NOT NULL,
-        picture_project MEDIUMBLOB,
         resume_project VARCHAR(255) NOT NULL,
+        picture_project VARCHAR(255) NOT NULL,
         PRIMARY KEY (id_project)
 )
 Engine = INNODB;

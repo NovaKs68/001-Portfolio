@@ -4,12 +4,14 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderMenuComponent } from './header-menu/header-menu.component';
-import { BiographyMenuComponent } from './biography-menu/biography-menu.component';
-import { ShowcaseProjectMenuComponent } from './showcase-project-menu/showcase-project-menu.component';
-import { MenuViewComponent } from './menu-view/menu-view.component';
+import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
+import { BiographyMenuComponent } from './components/biography-menu/biography-menu.component';
+import { ShowcaseProjectMenuComponent } from './components/showcase-project-menu/showcase-project-menu.component';
+import { MenuViewComponent } from './pages/menu-view/menu-view.component';
 import {RouterModule, Routes} from '@angular/router';
-import { DeviseMenuComponent } from './devise-menu/devise-menu.component'
+import { DeviseMenuComponent } from './components/devise-menu/devise-menu.component';
+import { CreateProjectsComponent } from './components/create-projects/create-projects.component'
+import {ReactiveFormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   { path : '', component: MenuViewComponent },
@@ -23,13 +25,15 @@ const appRoutes: Routes = [
     BiographyMenuComponent,
     ShowcaseProjectMenuComponent,
     MenuViewComponent,
-    DeviseMenuComponent
+    DeviseMenuComponent,
+    CreateProjectsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
