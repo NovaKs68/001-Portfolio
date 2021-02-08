@@ -3,18 +3,9 @@
   src: url('./../../../assets/police/Fulbo-Argenta.otf');
 }
 
-div{
-  /*border-width: 1px;
-  border-style: solid;
-  border-color: black;*/
-}
-
-header{
+#header{
   width: 100%;
-  height: 100%;
- /* border-width: 1px;
-  border-style: solid;
-  border-color: red; */
+  height: 850px;
   overflow: hidden;
 }
 
@@ -36,46 +27,46 @@ h1{
 }
 
 #headerBlocOne{
-  height: 820px;
+  height: 100000px;
   overflow: hidden;
   background-color: #95a595;
+  width: 56%;
 }
 
 #headerBlocTwo{
-  height: 750px;
+  height: 100000px;
   background-color: #727272;
-  overflow: hidden;
+  width: 44%;
 }
 
 #headerMenu{
   padding-top: 1.5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .headerMenuContent{
   color: floralwhite;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.8vw;
   font-family: fulbo-argenta, serif;
 }
 
 #profil{
   z-index: 10;
   position: absolute;
-  top: 70%;
-  right: 28%; /*33*/
-  //background-color: floralwhite;
+  top: 650px;
+  right: 28%;
   height: 120px;
   width: 250px;
   color: white;
   font-family: fulbo-argenta, serif;
-  //border-width: 1px;
-  //border-style: solid;
-  //border-color: black;
 }
 
 .headerProfilContent {
   color: floralwhite;
-  font-size: 4em;
+  font-size: 4vw;
 }
 
 #imgRobotHeader{
@@ -83,12 +74,12 @@ h1{
   animation-name: imgRobotHeader;
   animation-duration: 2s;
   width: 120%;
-  top: 10%;
+  top: 150px;
 }
 
 @keyframes imgRobotHeader {
-  0%   {left:120%; top: 10%;}
-  100% {left:0px; top: 10%;}
+  0%   {left:120%; top: 150px;}
+  100% {left:0px; top: 150px;}
 }
 
 #imgNASHeader{
@@ -103,4 +94,252 @@ h1{
 @keyframes imgNASHeader {
   0%   {right:120%; top:150px;}
   100% {right:50%; top:150px;}
+}
+
+
+@media (max-width: 1480px) {
+
+  #header{
+    height: 690px;
+  }
+
+  #profil{
+    right: 24%;
+    top: 540px;
+  }
+
+}
+
+
+@media (max-width: 1200px) {
+
+  #header {
+    height: 640px;
+  }
+
+  #profil{
+    right: 18%;
+    top: 480px;
+  }
+
+  .mt-md-2 {
+    margin-top: 40px !important;
+  }
+
+  .mt-md-4 {
+    margin-top: 100px !important;
+  }
+}
+
+
+@media (max-width: 1060px) {
+
+  #header{
+    height: 570px;
+  }
+
+  #profil{
+    right: 16%;
+    top: 440px;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  #header{
+    height: 480px;
+  }
+
+  #profil{
+    right: 12%;
+    top: 380px;
+  }
+
+  #imgRobotHeader{
+    top: 130px;
+  }
+
+  @keyframes imgRobotHeader {
+    0%   {left:120%; top: 130px;}
+    100% {left:0; top: 130px;}
+  }
+
+  #imgNASHeader{
+    top: 130px;
+  }
+
+  @keyframes imgNASHeader {
+    0%   {right:120%; top:130px;}
+    100% {right:50%; top:130px;}
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  #header{
+    height: 420px;
+  }
+
+  #profil{
+    right: 10%;
+    top: 330px;
+  }
+
+  #imgRobotHeader{
+    top: 90px;
+  }
+
+  .headerMenuContent{
+    font-size: 2vw;
+  }
+
+  @keyframes imgRobotHeader {
+    0%   {left:120%; top: 90px;}
+    100% {left:0; top: 90px;}
+  }
+
+  #imgNASHeader{
+    top: 90px;
+  }
+
+  @keyframes imgNASHeader {
+    0%   {right:120%; top:90px;}
+    100% {right:50%; top:90px;}
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  #header{
+    height: 370px;
+  }
+
+  #profil{
+    right: 5%;
+    top: 280px;
+  }
+
+  #imgRobotHeader{
+    top: 70px;
+  }
+
+  @keyframes imgRobotHeader {
+    0%   {left:120%; top: 70px;}
+    100% {left:0; top: 70px;}
+  }
+
+  #imgNASHeader{
+    top: 70px;
+  }
+
+  @keyframes imgNASHeader {
+    0%   {right:120%; top:70px;}
+    100% {right:50%; top:70px;}
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  #header{
+    height: 310px;
+  }
+
+  #profil{
+    right: -5%;
+    top: 250px;
+  }
+
+  #imgRobotHeader{
+    top: 50px;
+  }
+
+  .headerMenuContent{
+    font-size: 2.8vw;
+  }
+
+  @keyframes imgRobotHeader {
+    0%   {left:120%; top: 50px;}
+    100% {left:0; top: 50px;}
+  }
+
+  #imgNASHeader{
+    top: 50px;
+  }
+
+  @keyframes imgNASHeader {
+    0%   {right:120%; top:50px;}
+    100% {right:50%; top:50px;}
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  #headerContent {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #headerBlocOne {
+    width: 100% !important;
+    height: 200px;
+  }
+
+  #headerBlocTwo {
+    width: 100% !important;
+    margin-top: 0 !important;
+    height: 200px;
+  }
+
+  #header{
+    height: 450px;
+  }
+
+  #profil{
+    left: 20px;
+    top: 330px;
+  }
+
+  #headerMenu {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .headerProfilContent {
+    font-size: 10vw !important;
+  }
+
+  .headerMenuContent{
+    font-size: 5.5vw !important;
+  }
+
+  #imgRobotHeader{
+    top: -10px;
+    left: 35%;
+    width: 330px;
+  }
+
+  @keyframes imgRobotHeader {
+    0%   {left:120%; top: -10px;}
+    100% {left: 35%; top: -10px;}
+  }
+
+  #imgNASHeader{
+    display: flex !important;
+    position: absolute !important;
+    top: 95px;
+    right: 50%;
+    width: 350px;
+    z-index: 10 !important;
+  }
+
+  @keyframes imgNASHeader {
+    0%   {right:120%; top:95px;}
+    100% {right:170px; top:95px;}
+  }
+
 }

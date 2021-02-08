@@ -2,8 +2,8 @@
   <article *ngFor="let project of projects; let index = index;" [style.background-image]="'url(' + project.picture_project + ')'"
            [style.background-color]="index % 3 ? '#95a595' : '#727272'" [style.color]="index % 3 ? 'black' : 'white'">
     <div id="containerContent">
-      <h2>{{project.title_project}}</h2>
-      <p>{{project.resume_project}}</p>
+      <h2 id="titleProject">{{project.title_project}}</h2>
+      <p id="resumeProject">{{project.resume_project}}</p>
     </div>
   </article>
 </div>

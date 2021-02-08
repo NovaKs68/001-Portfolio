@@ -19,13 +19,11 @@ export class BiographyMenuComponent implements OnInit {
   ngOnInit(): void {  }
 
   @HostListener('window:scroll', ['$event'])
-  scrollHandler(event) {
-    console.log("Scroll Event");
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    console.log(scrolled)
-    if(scrolled > 15) {
+  scrollHandler(event): void {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    if (scrolled > 15) {
       this.showPresentMe = true;
     }
   }
