@@ -1,0 +1,144 @@
+article{
+  height: 600px;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  width: 49%;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  //background-image: url("http://localhost:8080/modules/pictures/MenuPortfolio.png1612465538048.png");
+  display: flex;
+}
+
+#containerContent {
+  margin: 500px 10px 10px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1820px) {
+  #containerContent {
+    margin-top: 480px;
+  }
+}
+
+@media (max-width: 1480px) {
+  article{
+    height: 500px;
+  }
+  #containerContent {
+    margin-top: 380px;
+  }
+}
+
+@media (max-width: 1230px) {
+  article{
+    height: 400px;
+  }
+  #containerContent {
+    margin-top: 260px;
+  }
+}
+
+@media (max-width: 1230px) {
+  article{
+    height: 600px;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+  }
+  #containerContent {
+    margin-top: 500px;
+  }
+}
+
+@media (max-width: 910px) {
+  article{
+    height: 600px;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+  }
+  #containerContent {
+    margin-top: 480px;
+  }
+}
+
+@media (max-width: 780px) {
+  article{
+    height: 500px;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+  }
+  #containerContent {
+    margin-top: 380px;
+  }
+}
+
+@media (max-width: 635px) {
+  article{
+    height: 400px;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+  }
+  #containerContent {
+    margin-top: 260px;
+  }
+}
+
+@media (max-width: 635px) {
+  article{
+    height: 400px;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+  }
+  #containerContent {
+    margin-top: 350px;
+  }
+
+  #resumeProject {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  article{
+    height: 300px;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+  }
+  #containerContent {
+    margin-top: 250px;
+  }
+
+  #resumeProject {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  article{
+    height: 200px;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+  }
+  #containerContent {
+    margin-top: 160px;
+  }
+
+  #resumeProject {
+    display: none;
+  }
+
+  #titleProject {
+    font-size: 1.5em;
+  }
+}

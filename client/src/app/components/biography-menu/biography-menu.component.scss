@@ -1,0 +1,452 @@
+section {
+  width: 100%;
+  height: 900px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#presentMeBox {
+  width: 30%;
+}
+
+.mt-md-5{
+  margin-top: 10% !important;
+}
+
+.mb-md-5{
+  margin-bottom: 5% !important;
+}
+
+.mt-md-3{
+  margin-top: 8% !important;
+}
+
+.mb-md-3{
+  margin-bottom: 2% !important;
+}
+
+@keyframes AutoSlide {
+  0%, 25%, 100% {
+    left: 0;
+  }
+
+  50%, 75% {
+    left: -1000px;
+  }
+}
+
+#slideshow {
+  z-index: 10;
+  position: relative;
+  width: 1000px;
+  height: 620px;
+  overflow: hidden;
+  top: 60px;
+}
+
+#slideContent li {
+  display: inline;
+}
+
+#slideContent {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  margin: 0;
+  padding: 0;
+
+  animation-name: AutoSlide;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.imgSlide {
+  width: 1000px;
+  height: 620px;
+}
+
+.presentMe {
+  position: relative;
+  z-index: 1;
+  top: 80px;
+  width: 80%;
+  height: 400px;
+
+  animation-name: reveal;
+  animation-duration: 2s;
+}
+
+.text {
+  z-index: 10;
+  padding: 10px;
+  background-color: #95a595;
+  color: white;
+  font-size: 1.2em;
+}
+
+#greyBox {
+  background-color: #727272;
+  height: 700px;
+  width: 90%;
+  display: flex;
+  position: relative;
+  top: -380px;
+  left: 30px;
+  z-index: 0;
+}
+
+@keyframes reveal {
+  0% {opacity:0;margin-left:-800px;}
+  20% {opacity:0;margin-left:-800px;}
+  30% {opacity:1;margin-left:-800px;}
+  80% {opacity:1;margin-left:0;}
+  100% {margin-left:0;}
+}
+
+@keyframes backGroundColorText {
+  0% {margin-left: -800px;}
+  100% {margin-left: 0;}
+}
+
+// Change size of slideshow. Present me and grey box are responsive with pourcent.
+@media (max-width: 1610px) {
+
+  #presentMeBox {
+    width: 35%;
+  }
+
+  #slideshow {
+    width: 800px;
+    height: 550px;
+  }
+
+  #slideContent {
+    width: 800px;
+  }
+
+  .imgSlide {
+    width: 800px;
+    height: 550px;
+  }
+
+  @keyframes AutoSlide {
+    0%, 25%, 100% {
+      left: 0;
+    }
+    50%, 75% {
+      left: -800px;
+    }
+  }
+}
+
+// Change size of slideshow and shift the spawn area off the screen
+@media (max-width: 1350px) {
+  #presentMeBox {
+    width: 40%;
+  }
+
+  #slideshow {
+    width: 600px;
+    height: 440px;
+  }
+
+  #slideContent {
+    width: 600px;
+  }
+
+  .imgSlide {
+    width: 600px;
+    height: 440px;
+  }
+
+  @keyframes AutoSlide {
+    0%, 25%, 100% {
+      left: 0;
+    }
+    50%, 75% {
+      left: -600px;
+    }
+  }
+
+  @keyframes reveal {
+    0% {opacity:0;margin-left:-1200px;}
+    20% {opacity:0;margin-left:-1200px;}
+    30% {opacity:1;margin-left:-1200px;}
+    80% {opacity:1;margin-left:0;}
+    100% {margin-left:0;}
+  }
+}
+
+@media (max-width: 1110px) {
+
+  section {
+    height: 700px;
+  }
+
+  // Change size of slideshow
+  #presentMeBox {
+    width: 45%;
+  }
+
+  #slideshow {
+    width: 500px;
+    height: 320px;
+  }
+
+  #slideContent {
+    width: 500px;
+  }
+
+  .imgSlide {
+    width: 500px;
+    height: 320px;
+  }
+
+  @keyframes AutoSlide {
+    0%, 25%, 100% {
+      left: 0;
+    }
+    50%, 75% {
+      left: -500px;
+    }
+  }
+
+  // Change size present me part
+  .text {
+    font-size: 1.1em;
+  }
+
+  #greyBox {
+    height: 600px;
+  }
+
+}
+
+// Slideshow part and present me part make column
+@media (max-width: 960px) {
+
+  section {
+    height: 1100px;
+  }
+
+  // Change size of slideshow
+
+  #slideshow {
+    width: 600px;
+    height: 380px;
+    top: 0;
+  }
+
+  #slideContent {
+    width: 600px;
+  }
+
+  .imgSlide {
+    width: 600px;
+    height: 380px;
+  }
+
+  @keyframes AutoSlide {
+    0%, 25%, 100% {
+      left: 0;
+    }
+    50%, 75% {
+      left: -600px;
+    }
+  }
+
+  // Change size present me part
+
+  #presentMeBox {
+    width: 60%;
+    margin-left: 30%;
+  }
+
+  .text {
+    font-size: 1.1em;
+  }
+
+  #greyBox {
+    height: 600px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  section {
+    height: 1000px;
+  }
+
+  // Change size of slideshow
+
+  #slideshow {
+    width: 500px;
+    height: 320px;
+  }
+
+  #slideContent {
+    width: 500px;
+  }
+
+  .imgSlide {
+    width: 500px;
+    height: 320px;
+  }
+
+  @keyframes AutoSlide {
+    0%, 25%, 100% {
+      left: 0;
+    }
+    50%, 75% {
+      left: -500px;
+    }
+  }
+
+  #presentMeBox {
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .text {
+    max-width: 400px;
+    margin-top: -20px;
+    font-size: 1.0em;
+  }
+
+  #greyBox {
+    height: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  section {
+    height: 900px;
+  }
+
+  // Change size of slideshow
+
+  #slideshow {
+    width: 400px;
+    height: 260px;
+  }
+
+  #slideContent {
+    width: 400px;
+  }
+
+  .imgSlide {
+    width: 400px;
+    height: 260px;
+  }
+
+  @keyframes AutoSlide {
+    0%, 25%, 100% {
+      left: 0;
+    }
+    50%, 75% {
+      left: -400px;
+    }
+  }
+
+  #greyBox {
+    height: 550px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  section {
+    height: 900px;
+  }
+
+  // Change size of slideshow
+
+  #slideshow {
+    width: 300px;
+    height: 200px;
+  }
+
+  #slideContent {
+    width: 300px;
+  }
+
+  .imgSlide {
+    width: 300px;
+    height: 200px;
+  }
+
+  @keyframes AutoSlide {
+    0%, 25%, 100% {
+      left: 0;
+    }
+    50%, 75% {
+      left: -300px;
+    }
+  }
+
+  .text {
+    font-size: 0.9em;
+    min-width: 240px;
+  }
+
+  #presentMeBox {
+    width: 90%;
+  }
+}
+
+@media (max-width: 300px) {
+
+  section {
+    height: 800px;
+  }
+
+  // Change size of slideshow
+
+  #slideshow {
+    width: 200px;
+    height: 127px;
+  }
+
+  #slideContent {
+    width: 200px;
+  }
+
+  .imgSlide {
+    width: 200px;
+    height: 127px;
+  }
+
+  @keyframes AutoSlide {
+    0%, 25%, 100% {
+      left: 0;
+    }
+    50%, 75% {
+      left: -200px;
+    }
+  }
+
+  .text {
+    font-size: 0.8em;
+    min-width: 0;
+    max-height: 440px;
+    overflow: hidden;
+  }
+
+  .presentMe {
+    width: 90%;
+  }
+
+  #presentMeBox {
+    width: 100%;
+    margin-left: 0;
+  }
+}

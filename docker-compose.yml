@@ -23,9 +23,7 @@ services:
     depends_on:
       - mariadb
     volumes:
-      - ./server/log:/app/server/log:z
-      - ./server/justificatifs:/app/server/justificatifs:z
-      - ./server/picturesTrombinoscope:/app/server/picturesTrombinoscope:z
+      - ./server/modules/pictures/picturesProjects:/app/server/modules/pictures/picturesProjects:z
     env_file:
       - ./.env
 

@@ -1,0 +1,116 @@
+#divider {
+  height: 1px;
+  background-color: #727272;
+  width: 100%;
+  margin-top: 5px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 40px 25% 50px;
+}
+
+h6 {
+  text-align: center;
+  color: #727272;
+}
+
+p {
+  text-align: center;
+  font-size: 2em;
+}
+
+@media (max-width: 1320px) {
+
+
+  p {
+    font-size: 1.8em;
+  }
+
+}
+
+@media (max-width: 1192px) {
+
+  p {
+    font-size: 1.7em;
+  }
+
+}
+
+@media (max-width: 1120px) {
+
+  p {
+    font-size: 1.6em;
+  }
+
+}
+
+@media (max-width: 1055px) {
+
+  p {
+    font-size: 1.5em;
+  }
+
+}
+
+@media (max-width: 990px) {
+
+  p {
+    font-size: 1.4em;
+  }
+
+}
+
+@media (max-width: 925px) {
+
+  p {
+    font-size: 1.3em;
+  }
+
+  #container {
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+
+}
+
+@media (max-width: 720px) {
+
+  p {
+    font-size: 1.3em;
+  }
+
+  #container {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+
+}
+
+@media (max-width: 370px) {
+
+  p {
+    font-size: 1.1em;
+  }
+
+  #container {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+
+}
+
+@media (max-width: 315px) {
+
+  p {
+    font-size: 1.0em;
+  }
+
+  #container {
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+}

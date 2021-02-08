@@ -1,0 +1,24 @@
+<div id="box" class="container">
+  <form [formGroup]="articleForm" class="row" (ngSubmit)="onSubmit()">
+    <!-- title -->
+    <label for="title">Titre de l'article :
+      <input type="text" name="title" id="title" formControlName="titleMain">
+    </label>
+    <!-- resume -->
+    <label for="resume">Résumé de l'article :
+      <input type="text" name="resume" id="resume" formControlName="resume">
+    </label>
+
+
+    <!-- images -->
+    <button class="btn btn-success" type="button" (click)="filePicker.click()">Ajouter image</button>
+    <input type="file" #filePicker (change)="onImagePick($event)">
+    <div class="image-preview" *ngIf="imagePreview">
+      <img [src]="imagePreview" alt="">
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+  <!--<img src="http://localhost:8080/modules/pictures/apercu.png1612463458610.png">-->
+
+</div>
