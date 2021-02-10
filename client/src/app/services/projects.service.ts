@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import {Project} from '../models/project';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+
+import { Project } from '../models/project';
+import { ExpressService } from './express.service';
+import {Observable} from "rxjs";
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,25 +12,21 @@ import {Project} from '../models/project';
 
 export class ProjectsService {
 
-  constructor() {  }
+  domain: string;
+  httpOptions = {
+    headers: new HttpHeaders({'Content-type': 'application/json', 'Access-Control-Allow-Origin': '*'})
+  };
 
-  getProjects(): any {
-    return new Promise((resolve, reject) => {
-      fetch('http://localhost:8080/api/project/', {
-        method: 'GET',
-        headers: { 'Content-type': 'application/json; charset=UTF-8' }
-      })
-        .then((response) => {
-          response.json().then((data) => {
-            console.log(data);
-            resolve(data);
-          });
-        })
-        .catch((err) => {
-          console.log('Fetch Error : ', err);
-          reject(err);
-        });
-    });
+  constructor(private expressService: ExpressService,
+              private httpClient?: HttpClient) {
+    this.domain = expressService.getDomain();
+  }
+
+  getProjects(): Observable<Project[]> {
+    console.log('HELO');
+    return this.httpClient
+      .get<Project[]>(this.domain + '/project', this.httpOptions)
+      .pipe();
   }
 
   getOneProject(idProject: number): any {

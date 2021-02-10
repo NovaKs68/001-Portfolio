@@ -32,8 +32,8 @@ export class CreateProjectsComponent implements OnInit {
   onSubmit(): void {
 
     const project = new Project();
-    project.titleProject = this.articleForm.get('titleMain').value;
-    project.resumeProject = this.articleForm.get('resume').value;
+    project.title_project = this.articleForm.get('titleMain').value;
+    project.resume_project = this.articleForm.get('resume').value;
 
     console.log('Le contre file ' + project);
     console.log( 'le file ' + this.articleForm.get('image').value);

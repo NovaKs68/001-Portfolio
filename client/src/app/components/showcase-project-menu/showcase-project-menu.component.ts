@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../../services/projects.service';
+import {HttpErrorResponse} from '@angular/common/http';
+import { Project } from '../../models/project';
 
 @Component({
   selector: 'app-showcase-project-menu',
@@ -8,7 +10,7 @@ import { ProjectsService } from '../../services/projects.service';
 })
 export class ShowcaseProjectMenuComponent implements OnInit {
 
-  projects;
+  projects: Project[] = [];
 
   constructor(private projectsService: ProjectsService) { }
 
@@ -17,9 +19,11 @@ export class ShowcaseProjectMenuComponent implements OnInit {
   }
 
   async getProjects(): Promise<void> {
-    this.projectsService.getProjects().then((res) => {
-      this.projects = res.response;
-      console.log(this.projects);
+    this.projectsService.getProjects().subscribe((projects: Project[]) => {
+      this.projects = JSON.parse(JSON.stringify(projects)).response;
+    },
+      (err: HttpErrorResponse) => {
+      console.log(err);
     });
   }
 

@@ -1,4 +1,6 @@
 export class Project {
-  titleProject: string;
-  resumeProject: string;
+  id_project: number;
+  picture_project: string;
+  resume_project: string;
+  title_project: string;
 }
